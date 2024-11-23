@@ -13,6 +13,7 @@ public class AttackAction implements Action {
         int damage = Math.max(0, attackDamage - defendStrength);
         defender.reduceHealth(damage);
         System.out.printf("%s attacks %s%n", attacker.getName(), defender.getName());
+        System.out.printf("Attack Roll: %d, Defense Roll: %d%n", attackRoll, defendRoll);
         System.out.printf("Net Damage: %d, %s's remaining health: %d%n%n", damage, defender.getName(), defender.getHealth());
     }
 }
