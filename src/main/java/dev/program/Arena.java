@@ -25,7 +25,19 @@ public class Arena {
     }
 
     private void processTurn(Player attacker, Player defender) {
-    }
+        int attackRoll = dice.roll();
+        int defendRoll = dice.roll();
 
+        int attackDamage = attacker.getAttack()*attackRoll;
+        int defendStrength = defender.getStrength()*defendRoll;
+
+        int damage = Math.max(0, attackDamage - defendStrength);
+        defender.reduceHealth(damage);
+
+        System.out.printf("%s attacks %s%n", attacker.getName(), defender.getName());
+        System.out.printf("Attack Roll: %d, Defense Roll: %d%n", attackRoll, defendRoll);
+        System.out.printf("Attack damage: %d, Defense Strength: %d%n", attackDamage, defendStrength);
+        System.out.printf("Net Damage: %d, %s's remaining health: %d%n", damage, defender.getName(), defender.getHealth());
+    }
 
 }
