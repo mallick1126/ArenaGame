@@ -6,7 +6,7 @@ public class Player {
     private final int strength;
     private final int attack;
 
-    private Player(Builder builder) {
+    public Player(Builder builder) {
         this.name = builder.name;
         this.health = builder.health;
         this.strength = builder.strength;
