@@ -1,5 +1,7 @@
 package dev.program;
 
+import dev.program.Player.Player;
+
 public class Main {
     public static void main(String[] args) {
         Player playerA = new Player("Player A", 50, 5, 10);

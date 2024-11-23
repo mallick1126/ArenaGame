@@ -1,10 +1,13 @@
 package dev.program;
 
+import dev.program.Dice.SixSidedDiceStrategy;
+import dev.program.Player.Player;
+
 public class Arena {
-    private final Dice dice;
+    private final SixSidedDiceStrategy dice;
 
     public Arena() {
-        this.dice = new Dice(6);
+        this.dice = new SixSidedDiceStrategy(6);
     }
 
     public Player fight(Player player1, Player player2) {

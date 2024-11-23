@@ -1,6 +1,6 @@
 import dev.program.Arena;
-import dev.program.Dice;
-import dev.program.Player;
+import dev.program.Dice.SixSidedDiceStrategy;
+import dev.program.Player.Player;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +38,7 @@ public class ArenaTest {
 
     @Test
     void testDiceRolls() {
-        Dice dice = new Dice(6);
+        SixSidedDiceStrategy dice = new SixSidedDiceStrategy(6);
         for (int i = 0; i < 1000; i++) {
             int roll = dice.roll();
             assertTrue(roll >= 1 && roll <= 6);
