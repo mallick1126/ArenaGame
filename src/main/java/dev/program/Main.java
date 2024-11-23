@@ -1,5 +1,8 @@
 package dev.program;
 
+import dev.program.Action.Action;
+import dev.program.Action.AttackAction;
+import dev.program.Arena.Arena;
 import dev.program.Player.Player;
 
 public class Main {
@@ -17,8 +20,9 @@ public class Main {
                 .build();
 
 
-        Arena arena = new Arena();
-        Player winner = arena.fight(playerA, playerB);
+        Arena arena = Arena.getInstance();
+        Action attackAction = new AttackAction();
+        Player winner = arena.fight(playerA, playerB, attackAction);
 
         System.out.println("Winner: " + winner.getName());
     }

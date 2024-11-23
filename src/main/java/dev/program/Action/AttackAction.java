@@ -3,7 +3,7 @@ package dev.program.Action;
 import dev.program.Dice.Dice;
 import dev.program.Player.Player;
 
-public class AttackAction implements Action{
+public class AttackAction implements Action {
     @Override
     public void execute(Player attacker, Player defender, Dice dice) {
         int attackRoll = dice.roll();
