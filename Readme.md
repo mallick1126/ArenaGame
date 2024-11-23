@@ -1,4 +1,4 @@
-# Java Arena Battle Game
+# Java dev.program.Arena.Arena Battle Game
 
 This is a simple Java project that simulates a battle between two players in an arena. The players fight using dice rolls, where the attack and defense strength are influenced by random dice rolls. The winner is the player who remains alive after the battle.
 
@@ -11,11 +11,11 @@ This is a simple Java project that simulates a battle between two players in an 
 │   │   └── java/
 │   │       ├── Player.java      # Player class representing each participant
 │   │       ├── Dice.java        # Dice class to handle dice rolls
-│   │       ├── Arena.java       # Arena class where the fight happens
+│   │       ├── dev.program.Arena.Arena.java       # dev.program.Arena.Arena class where the fight happens
 │   │       └── Main.java        # Entry point to run the game
 │   └── test/
 │       └── java/
-│           └── ArenaTest.java    # Unit tests for the Arena functionality
+│           └── ArenaTest.java    # Unit tests for the dev.program.Arena.Arena functionality
 ├── pom.xml                       # Maven project configuration file
 ```
 
@@ -56,13 +56,13 @@ To run this project, you'll need:
    ```bash
    mvn test
 
-#### This will execute all the test cases, including tests for the Arena functionality.
+#### This will execute all the test cases, including tests for the dev.program.Arena.Arena functionality.
 
 ### Code Examples
 The project contains the following Java classes:
 
 - **Player.java**: This class represents a player in the arena with attributes like name, health, strength, and attack. It also provides methods to check health status and reduce health after taking damage.
 - **Dice.java**: This class handles dice rolls. It allows specifying the number of sides on the die and provides a method to roll the dice.
-- **Arena.java**: This class manages the battle between two players. It takes two players as input, simulates the fight by rolling dice for attack and defense, and determines the winner.
+- **dev.program.Arena.Arena.java**: This class manages the battle between two players. It takes two players as input, simulates the fight by rolling dice for attack and defense, and determines the winner.
 - **Main.java**: This is the entry point for the program. It creates two players, sets up the arena, and starts the fight.
-- **ArenaTest.java**: This class contains unit tests for the Arena class to ensure its functionality.
+- **ArenaTest.java**: This class contains unit tests for the dev.program.Arena.Arena class to ensure its functionality.
