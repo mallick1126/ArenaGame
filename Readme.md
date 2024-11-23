@@ -2,26 +2,14 @@
 
 This is a simple Java project that simulates a battle between two players in an arena. The players fight using dice rolls, where the attack and defense strength are influenced by random dice rolls. The winner is the player who remains alive after the battle.
 
-## Project Structure
-
-```plaintext
-/project-root
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       ├── Player.java      # Player class representing each participant
-│   │       ├── Dice.java        # Dice class to handle dice rolls
-│   │       ├── dev.program.Arena.Arena.java       # dev.program.Arena.Arena class where the fight happens
-│   │       └── Main.java        # Entry point to run the game
-│   └── test/
-│       └── java/
-│           └── ArenaTest.java    # Unit tests for the dev.program.Arena.Arena functionality
-├── pom.xml                       # Maven project configuration file
-```
+## Features
+- **Player Creation**: Players are created with specific attributes (health, strength, attack) using the Builder pattern.
+- **Dice Rolling**: A dice roll determines the outcome of attacks and defenses.
+- **Arena Fight**: Two players fight in the arena until one player's health reaches 0.
+- **Unit Tests**: The project includes unit tests to validate the game logic.
 
 
 ## Prerequisites
-
 To run this project, you'll need:
 
 - **Java 8 or higher**: You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase-downloads.html) or use an OpenJDK distribution.
@@ -43,6 +31,7 @@ To run this project, you'll need:
 ### 3. Build and Run the Project (Using Maven)
 - a. Compile the project:
   ```bash
+  mvn clean install
   mvn compile
 
 - b. Run the project:
@@ -51,18 +40,35 @@ To run this project, you'll need:
 
 #### This will compile the project and then execute the Main class, which starts the game.
 
-### 4: Run the tests (optional)
+### Example Output:
+
+```bash
+Player A attacks Player B
+Attack Roll: 4, Defense Roll: 2
+Attack Damage: 40, Defense Strength: 50
+Net Damage: 0, Player B's remaining health: 100
+
+Player B attacks Player A
+Attack Roll: 5, Defense Roll: 1
+Attack Damage: 50, Defense Strength: 20
+Net Damage: 30, Player A's remaining health: 70
+
+...
+Winner: Player A
+```
+
+### 4: Run the tests
  - To run unit tests, you can use the following Maven command:
    ```bash
    mvn test
 
-#### This will execute all the test cases, including tests for the dev.program.Arena.Arena functionality.
+#### This will run the tests in the src/test/java/ directory and validate the correctness of the game logic
 
-### Code Examples
-The project contains the following Java classes:
 
-- **Player.java**: This class represents a player in the arena with attributes like name, health, strength, and attack. It also provides methods to check health status and reduce health after taking damage.
-- **Dice.java**: This class handles dice rolls. It allows specifying the number of sides on the die and provides a method to roll the dice.
-- **dev.program.Arena.Arena.java**: This class manages the battle between two players. It takes two players as input, simulates the fight by rolling dice for attack and defense, and determines the winner.
-- **Main.java**: This is the entry point for the program. It creates two players, sets up the arena, and starts the fight.
-- **ArenaTest.java**: This class contains unit tests for the dev.program.Arena.Arena class to ensure its functionality.
+### Dependencies
+#### This project uses the following dependencies:
+- JUnit 5 for unit testing
+- Maven for project management and building
+
+#### Ensure that the required dependencies are included in your pom.xml.
+
