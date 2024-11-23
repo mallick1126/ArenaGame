@@ -6,25 +6,25 @@ public class Player {
     private final int strength;
     private final int attack;
 
-    public Player(String name, int strength, int health, int attack){
-        if(health <=0 || strength <= 0 || attack <=0){
+    public Player(String name, int health, int strength, int attack) {
+        if (health <= 0 || strength <= 0 || attack <= 0) {
             throw new IllegalArgumentException("All attributes must be positive");
         }
         this.name = name;
+        this.health = health;
         this.strength = strength;
         this.attack = attack;
-        this.health = health;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getHealth(){
-    return health;
+    public int getHealth() {
+        return health;
     }
 
-    public int getStrength(){
+    public int getStrength() {
         return strength;
     }
 
@@ -32,11 +32,11 @@ public class Player {
         return attack;
     }
 
-    public void reduceHealth(int damage){
+    public void reduceHealth(int damage) {
         this.health = Math.max(0, this.health - damage);
     }
 
-    public boolean isAlive(){
+    public boolean isAlive() {
         return health > 0;
     }
 }
