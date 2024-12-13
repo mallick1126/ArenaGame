@@ -4,16 +4,19 @@ import dev.program.Action.Action;
 import dev.program.Action.AttackAction;
 import dev.program.Arena.Arena;
 import dev.program.Player.Player;
+import dev.program.Player.PlayerBuilder;
 
 public class Main {
     public static void main(String[] args) {
-        Player playerA = new Player.Builder("Player A")
+        Player playerA = new PlayerBuilder()
+                .setName("Player A")
                 .health(150)
                 .strength(20)
                 .attack(15)
                 .build();
 
-        Player playerB = new Player.Builder("Player B")
+        Player playerB = new PlayerBuilder()
+                .setName("Player B")
                 .health(100)
                 .strength(10)
                 .attack(25)

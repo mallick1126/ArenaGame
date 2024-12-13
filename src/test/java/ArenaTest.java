@@ -5,6 +5,7 @@ import dev.program.Arena.Arena;
 import dev.program.Dice.Dice;
 import dev.program.Dice.SixSidedDiceStrategy;
 import dev.program.Player.Player;
+import dev.program.Player.PlayerBuilder;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +13,8 @@ public class ArenaTest {
     // Test for Player creation using Builder pattern
     @Test
     void testPlayerCreation() {
-        Player player = new Player.Builder("TestPlayer")
+        Player player = new PlayerBuilder()
+                .setName("TestPlayer")
                 .health(100)
                 .strength(20)
                 .attack(15)
@@ -28,19 +30,20 @@ public class ArenaTest {
     @Test
     void testInvalidPlayerAttributes() {
         assertThrows(IllegalArgumentException.class,
-                () -> new Player.Builder("InvalidPlayer").health(-1).strength(10).attack(5).build());
+                () -> new PlayerBuilder().setName("InvalidPlayer").health(-1).strength(10).attack(5).build());
 
         assertThrows(IllegalArgumentException.class,
-                () -> new Player.Builder("InvalidPlayer").health(100).strength(0).attack(5).build());
+                () -> new PlayerBuilder().setName("InvalidPlayer").health(100).strength(0).attack(5).build());
 
         assertThrows(IllegalArgumentException.class,
-                () -> new Player.Builder("InvalidPlayer").health(100).strength(10).attack(-5).build());
+                () -> new PlayerBuilder().setName("InvalidPlayer").health(100).strength(10).attack(-5).build());
     }
 
     // Test for Player health reduction
     @Test
     void testPlayerHealthReduction() {
-        Player player = new Player.Builder("TestPlayer")
+        Player player = new PlayerBuilder()
+                .setName("TestPlayer")
                 .health(100)
                 .strength(20)
                 .attack(15)
@@ -68,7 +71,8 @@ public class ArenaTest {
     // Test for invalid Arena fight scenario
     @Test
     void testArenaFightValidation() {
-        Player player = new Player.Builder("Player1")
+        Player player = new PlayerBuilder()
+                .setName("Player1")
                 .health(100)
                 .strength(20)
                 .attack(15)
@@ -84,13 +88,15 @@ public class ArenaTest {
     // Test for Arena fight and determine winner
     @Test
     void testArenaFight() {
-        Player playerA = new Player.Builder("Player A")
+        Player playerA = new PlayerBuilder()
+                .setName("Player A")
                 .health(100)
                 .strength(20)
                 .attack(15)
                 .build();
 
-        Player playerB = new Player.Builder("Player B")
+        Player playerB = new PlayerBuilder()
+                .setName("Player B")
                 .health(80)
                 .strength(25)
                 .attack(10)
